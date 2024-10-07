@@ -18,10 +18,14 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BlogController;
 
 Route::get('/welcome', [HomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'home']);
-
+Route::get('/home', [BlogController::class, 'home']);
+Route::get('/about', [BlogController::class, 'about']);
+Route::get('/article', [BlogController::class, 'article']);
+Route::get('/contact', [BlogController::class, 'contact']);
+Route::post('/contact', [BlogController::class, 'contactForm']);
 
 // avant laravel 8 
 // Route::get('/welcome', 'HomeController@index');
